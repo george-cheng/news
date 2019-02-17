@@ -21,9 +21,8 @@ function my_error($conn,$sql){
         exit();
     }
     //返回结果
-    return $sql;
+    return $res;
 }
-
 my_error($conn,'set names utf8');
 
 //选择数据库
