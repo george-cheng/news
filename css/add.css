@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+input {
+  height: 24px;
+}
+article {
+  width: 900px;
+  margin: 30px auto 0;
+  border-radius: 10px;
+  border: 10px solid #f5f4f6;
+  border-bottom: 5px solid #f5f4f6;
+}
+article header {
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f4f6;
+}
+article header span {
+  font-weight: bold;
+  margin: 0 20px;
+}
+article header input {
+  width: 300px;
+}
+article .middle {
+  border: 1px solid #ccc;
+  height: 50px;
+  line-height: 50px;
+}
+article .middle > div {
+  box-sizing: border-box;
+  width: calc(50%);
+  float: left;
+}
+article .middle > div span {
+  margin: 0 20px;
+}
+article .middle > div input[type="radio"]:nth-child(3) {
+  margin-right: 10px;
+}
+article .middle > div input[type="text"] {
+  border: 1px solid #ccc;
+}
+article .middle > div input[type='radio'] {
+  vertical-align: middle;
+}
+article .middle .stick {
+  border-right: 1px solid #ccc;
+}
+article .middle:after {
+  content: "";
+  display: none;
+  clear: both;
+}
+article footer {
+  margin-top: 20px;
+}
+article footer button {
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 20px;
+  margin: 10px 10px;
+  background-color: #45b137;
+}
