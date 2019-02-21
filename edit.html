@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>增加列表</title>
+  <link rel="stylesheet" href="/css/add.css">
+  <link rel="icon" href="./favicon/icon6.ico" type="image/x-icon" />
+</head>
+
+<body>
+<form action="#" method="post">
+  <article>
+    <header>
+      <span class="title">标题</span>
+      <input type="text" name="title" id="title" value="<?php echo $news['title']; ?>" />
+    </header>
+    <div class="middle">
+      <div class="stick">
+        <span>是否置顶: </span>
+        <label for="yes">是</label>
+        <input type="radio" name="isTop" <?php echo $news['isTop'] == 1 ? 'checked = "checked" ' : '' ; ?>   value="1" >
+        <label for="no">否</label>
+        <input type="radio" name="isTop" <?php echo $news['isTop'] != 1 ? 'checked = "checked" ' : '' ; ?>  value="2">
+      </div>
+      <div class="name">
+        <span>发布人: </span>
+        <input type="text" name="publisher" id="name" value="<?php echo $news['publiser']; ?>">
+      </div>
+    </div>
+    <footer class="main">
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;内容: </span>
+      <textarea id="editor_id" name="content" style="width:880px;height:400px;">
+        <?php echo $news['content']; ?>
+      </textarea>
+      <button id="btn2">保存</button>
+      <button id="btn">返回</button>
+    </footer>
+  </article>
+</form>
+
+<script src="./js/kindeditor-all-min.js"></script>
+<script src="./js/zh-CN.js"></script>
+<script>
+  KindEditor.ready(function(K) {
+    window.editor = K.create('#editor_id');
+  });
+</script>
+
+</body>
+
+</html>

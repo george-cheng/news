@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>新闻列表</title>
-  <link rel="stylesheet" href="css/list.css">
+  <link rel="stylesheet" href="../css/list.css">
   <link rel="icon" href="./favicon/icon6.ico" type="image/x-icon" />
 
 </head>
@@ -21,6 +21,7 @@
 
     <from action="post" class="main">
       <table>
+        <thead>
         <tr>
           <th>编号</th>
           <th>标题</th>
@@ -29,16 +30,21 @@
           <th>是否置顶</th>
           <th>操作</th>
         </tr>
+        </thead>
+
+        <?php foreach($news as $k => $news):?>
         <tr>
-          <td>1</td>
-          <td>222222222222222222</td>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
+          <td><?php echo $k + 1;?></td>
+          <td><?php echo $news['title']; ?></td>
+          <td><?php echo date('y-m-d H:m:s',$news['pub_time']); ?></td>
+          <td><?php echo $news['publiser']; ?></td>
+          <td><?php echo $news['isTop'] == 1 ? '是' : '否'; ?></td>
           <td>
-            <a href="#">修改</a> | <a href="#">删除</a>
+            <a href="./news_edit.php?id=<?php echo $news['id']; ?>">修改</a> | <a href="./news_delete.php?id=<?php echo $news['id']; ?>"
+                                    onclick="return confirm('是否确定删除当前新闻?')">删除</a>
           </td>
         </tr>
+        <?php endforeach;?>
 
       </table>
     </from>
