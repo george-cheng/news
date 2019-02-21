@@ -40,8 +40,8 @@
           <td><?php echo $news['publiser']; ?></td>
           <td><?php echo $news['isTop'] == 1 ? '是' : '否'; ?></td>
           <td>
-            <a href="./news_edit.php?id=<?php echo $news['id']; ?>">修改</a> | <a href="./news_delete.php?id=<?php echo $news['id']; ?>"
-                                    onclick="return confirm('是否确定删除当前新闻?')">删除</a>
+            <a href="./news_edit.php?id=<?php echo $news['id']; ?>">修改</a> |
+            <a href="./news_delete.php?id=<?php echo $news['id']; ?>" onclick="return confirm('是否确定删除当前新闻?')">删除</a>
           </td>
         </tr>
         <?php endforeach;?>
